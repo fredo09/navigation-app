@@ -3,8 +3,10 @@ import { View, Text } from 'react-native';
 
 const App = () => {
     return (
-        <View>
-            <Text>Hola mundo!! XD 🚀 </Text>
+        <View className='mt-10'>
+            <Text className='text-3xl font-bold text-blue-500'>
+                Hola mundo!! XD 🚀
+            </Text>
         </View>
     )
 }
