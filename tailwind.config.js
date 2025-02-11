@@ -8,6 +8,16 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      // colors
+      colors: {
+        primary: '#49129c',
+        secundary: {
+          DEFAULT: '#B40086',
+          100: '#C51297',
+          200: '#831266',
+        },
+        tertiary: '#EF2967'
+      },
       // fonts
       fontFamily: {
         'work-black': ['WorkSans-Black', 'sans-serif'],
