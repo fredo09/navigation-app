@@ -1,11 +1,10 @@
-import { Link, Redirect } from 'expo-router';
+import { Redirect } from 'expo-router';
 import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+// import { View, Text, SafeAreaView } from 'react-native';
 
 const App = () => {
     //! Redireccionamos a page de products
-    return <Redirect href='/home'/>
-
+    return <Redirect href='/home'/>;
     // return (
     //     <SafeAreaView>
     //         <View className='mt-6 mx-2.5'>
