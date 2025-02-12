@@ -1,25 +1,57 @@
 import React from 'react';
-import { Text, Pressable, PressableProps } from 'react-native';
+import { View, Text, Pressable, PressableProps } from 'react-native';
 
 interface Props extends PressableProps {
-  color?: 'primary' | 'sencondary' | 'tertiary';
   children: string;
+  className?: string; 
+  variant?: 'contained' | 'text-only';
+  color?: 'primary' | 'secondary' | 'tertiary';
 }
 
-export const CustomButton = ({ children, color = 'primary', onPress, onLongPress }: Props) => {
-  const btnColors = {
-    primary: 'bg-primary',
-    sencondary: 'bg-sencondary',
-    tertiary: 'bg-tertiary'
-  }[color];
+export const CustomButton = React.forwardRef(
+  ({ 
+    children,
+    className,
+    color = 'primary', 
+    onPress, 
+    onLongPress, 
+    variant = 'contained' }: Props, ref: React.Ref<View>) => {
+    const btnColor = {
+      primary: 'bg-primary',
+      secondary: 'bg-sencondary',
+      tertiary: 'bg-tertiary'
+    }[color];
 
-  return (
-    <Pressable
-      onPress={onPress}
-      onLongPress={onLongPress}
-      className={`p-3 rounded ${btnColors} active:opacity-90`}
-      >
-        <Text className='text-white text-center'>{children}</Text>
-    </Pressable>
-  )
-}
+    const textColor = {
+      primary : 'text-primary',
+      secondary: 'text-secondary',
+      tertiary: 'text-tertiary'
+    }[color]
+
+    if (variant === 'text-only') {
+      return (
+        <Pressable
+          ref={ref}
+          onPress={onPress}
+          onLongPress={onLongPress}
+          className={`p-3 ${className}`}>
+            <Text className={`text-center ${textColor} font-work-medium`}>
+              {children}
+            </Text>
+        </Pressable>
+      );
+    }
+
+    return (
+      <Pressable
+        ref={ref}
+        onPress={onPress}
+        onLongPress={onLongPress}
+        className={`p-3 rounded-dm ${btnColor} active:opacity-90 ${className}`}>
+          <Text className='text-white text-center font-work-medium'>
+            {children}
+          </Text>
+      </Pressable>
+    );
+  }
+)

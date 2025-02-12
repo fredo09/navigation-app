@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, router } from 'expo-router';
 import { View, Text, SafeAreaView } from 'react-native';
+
 import { CustomButton } from '@/components/shared/CustomButton';
 
 const HomeScreen = () => {
@@ -14,17 +15,28 @@ const HomeScreen = () => {
 
         {/* Forma de crear un custom button para una navegacion */}
         <CustomButton 
-          color="primary" 
+          color="primary"
+          className='mt-10'
+          onPress={() => router.push('/products')}>
+            Click Productos
+        </CustomButton>
+
+        {/* Forma de crear un custom button para una navegacion */}
+        <CustomButton 
+          color="primary"
+          className='mt-10'
+          variant='text-only'
           onPress={() => router.push('/products')}>
             Click Productos
         </CustomButton>
 
         {/* Forma de usar el custom button dentro de un link para la navegacion */}
         <Link className='mb-5' href='/settings' asChild>
-        <CustomButton 
-          color="primary">
-            Link Productos!
-        </CustomButton>
+          <CustomButton
+            className='mt-10'
+            color="primary">
+              Link Productos!
+          </CustomButton>
         </Link>
       </View>
     </SafeAreaView>
