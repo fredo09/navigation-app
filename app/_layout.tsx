@@ -21,7 +21,7 @@ const RootLayout = () =>  {
 
     if (!fontsLoaded && !error ) return null;
 
-    return <Slot/>;
+    return <Slot />;
 };
 
 export default RootLayout;

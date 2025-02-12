@@ -18,7 +18,7 @@ export const CustomButton = React.forwardRef(
     variant = 'contained' }: Props, ref: React.Ref<View>) => {
     const btnColor = {
       primary: 'bg-primary',
-      secondary: 'bg-sencondary',
+      secondary: 'bg-secondary',
       tertiary: 'bg-tertiary'
     }[color];
 

@@ -16,26 +16,34 @@ const HomeScreen = () => {
         {/* Forma de crear un custom button para una navegacion */}
         <CustomButton 
           color="primary"
-          className='mt-10'
+          className='mb-2'
           onPress={() => router.push('/products')}>
-            Click Productos
+            Productos
         </CustomButton>
 
         {/* Forma de crear un custom button para una navegacion */}
         <CustomButton 
-          color="primary"
-          className='mt-10'
-          variant='text-only'
-          onPress={() => router.push('/products')}>
-            Click Productos
+          color="secondary"
+          className='mt-2'
+          onPress={() => router.push('/profile')}>
+            Perfil
+        </CustomButton>
+
+        {/* Forma de crear un custom button para una navegacion */}
+        <CustomButton 
+          color="tertiary"
+          className='mt-2'
+          onPress={() => router.push('/settings')}>
+            Settings
         </CustomButton>
 
         {/* Forma de usar el custom button dentro de un link para la navegacion */}
-        <Link className='mb-5' href='/settings' asChild>
+        <Link className='mb-5' href='/products' asChild>
           <CustomButton
-            className='mt-10'
+            className='mt-2'
+            variant='text-only'
             color="primary">
-              Link Productos!
+              Productos
           </CustomButton>
         </Link>
       </View>
