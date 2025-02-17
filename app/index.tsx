@@ -4,7 +4,8 @@ import React from 'react';
 
 const App = () => {
     //! Redireccionamos a page de products
-    return <Redirect href='/(stack)/home' />;
+    //return <Redirect href='/(stack)/home' />;
+    return <Redirect href='/tabs' />;
     // return (
     //     <SafeAreaView>
     //         <View className='mt-6 mx-2.5'>
