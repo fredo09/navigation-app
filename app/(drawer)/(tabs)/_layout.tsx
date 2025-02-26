@@ -7,13 +7,13 @@ const TabsLayout = () => {
     return (
         <Tabs screenOptions={{ 
                 tabBarActiveTintColor: 'indigo', 
-                headerShown: false,
                 //tabBarActiveBackgroundColor: 'blue'
             }}>
             <Tabs.Screen
                 name="(stack)"
                 options={{
                     title: ' Stack',
+                    headerShown: false,
                     tabBarIcon: ({ color }) => <FontAwesome size={28} name="pencil" color={color}/>,
                 }}
             />

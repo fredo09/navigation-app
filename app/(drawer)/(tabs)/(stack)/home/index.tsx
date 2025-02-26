@@ -1,10 +1,19 @@
 import React from 'react';
-import { Link, router } from 'expo-router';
+import { DrawerActions } from '@react-navigation/native';
+import { Link, router, useNavigation } from 'expo-router';
 import { View, Text, SafeAreaView } from 'react-native';
 
 import { CustomButton } from '@/components/shared/CustomButton';
 
 const HomeScreen = () => {
+
+  const navigation = useNavigation();
+
+  //Toggle Drawer
+  const onToggleDrawer = () => {
+    navigation.dispatch(DrawerActions.toggleDrawer);
+  };
+
   return (
     <SafeAreaView>
       <View className='px-10 mt-5'>
@@ -17,7 +26,7 @@ const HomeScreen = () => {
         <CustomButton 
           color="primary"
           className='mb-2'
-          onPress={() => router.push('/tabs/(stack)/products')}>
+          onPress={() => router.push('/products')}>
             Productos
         </CustomButton>
 
@@ -25,7 +34,7 @@ const HomeScreen = () => {
         <CustomButton 
           color="secondary"
           className='mt-2'
-          onPress={() => router.push('/tabs/(stack)/profile')}>
+          onPress={() => router.push('/profile')}>
             Perfil
         </CustomButton>
 
@@ -33,12 +42,20 @@ const HomeScreen = () => {
         <CustomButton 
           color="tertiary"
           className='mt-2'
-          onPress={() => router.push('/tabs/(stack)/settings')}>
+          onPress={() => router.push('/settings')}>
             Settings
         </CustomButton>
 
+        {/* Forma de crear un custom button para una navegacion */}
+        <CustomButton 
+          color="tertiary"
+          className='mt-2'
+          onPress={onToggleDrawer}>
+            Abrir el menu
+        </CustomButton>
+
         {/* Forma de usar el custom button dentro de un link para la navegacion */}
-        <Link className='mb-5' href='/tabs/(stack)/products' asChild>
+        <Link className='mb-5' href='/products' asChild>
           <CustomButton
             className='mt-2'
             variant='text-only'
